@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+   <!-- General description of your web application -->
+    <display-name>log Timer</display-name>
+    <description>
+     Log timer app 
+    </description>
+
+    <context-param>
+      <param-name>dgurianov</param-name>
+      <param-value>dgurianov@gmail.com</param-value>
+      <description>
+        The EMAIL address of the administrator to whom questions
+        and comments about this application should be addressed.
+      </description>
+    </context-param>
+
+    <servlet>
+      <servlet-name>mainController</servlet-name>
+      <description>
+       Main app controller
+      </description>
+      <servlet-class>fun.gud.wolg.controller.MainController</servlet-class>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet>
+      <servlet-name>saveToFile</servlet-name>
+      <description>
+       Save to file 
+      </description>
+      <servlet-class>fun.gud.wolg.controller.SaveToFile</servlet-class>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet>
+      <servlet-name>AddActivity</servlet-name>
+      <description>
+       Add activity controller 
+      </description>
+      <servlet-class>fun.gud.wolg.controller.AddActivity</servlet-class>
+     <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <!--<servlet>
+      <servlet-name>Config</servlet-name>
+      <description>
+        App Configuration
+      </description>
+      <servlet-class>gud.logtimer.controller.Config</servlet-class>
+      
+      <load-on-startup>1</load-on-startup>
+    </servlet>-->
+
+
+
+    <servlet-mapping>
+        <servlet-name>mainController</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>saveToFile</servlet-name>
+        <url-pattern>/savetofile</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>AddActivity</servlet-name>
+        <url-pattern>/addactivity</url-pattern>
+    </servlet-mapping>
+
+  
+
+    <session-config>
+        <session-timeout>30</session-timeout>    <!-- 30 minutes -->
+    </session-config>
+
+
+</web-app>
+
